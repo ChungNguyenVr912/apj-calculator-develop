@@ -12,7 +12,7 @@ class CalculatorTest {
     void testCalculateAdd() {
         int firstOperand = 1;
         int secondOperand = 1;
-        char operator= '+';
+        char operator = '+';
         int expected = 2;
 
         int result = Calculator.calculate(firstOperand, secondOperand, operator);
@@ -24,7 +24,7 @@ class CalculatorTest {
     void testCalculateSub() {
         int a = 2;
         int secondOperand = 1;
-        char operator= '-';
+        char operator = '-';
         int expected = 1;
 
         int result = Calculator.calculate(a, secondOperand, operator);
@@ -36,7 +36,7 @@ class CalculatorTest {
     void testCalculateMul() {
         int a = 2;
         int secondOperand = 2;
-        char operator= '*';
+        char operator = '*';
         int expected = 4;
 
         int result = Calculator.calculate(a, secondOperand, operator);
@@ -48,7 +48,7 @@ class CalculatorTest {
     void testCalculateDiv() {
         int a = 6;
         int secondOperand = 3;
-        char operator= '/';
+        char operator = '/';
         int expected = 2;
 
         int result = Calculator.calculate(a, secondOperand, operator);
@@ -60,10 +60,12 @@ class CalculatorTest {
     void testCalculateDivByZero() {
         int a = 2;
         int secondOperand = 0;
-        char operator= '/';
+        char operator = '/';
 
         assertThrows(RuntimeException.class,
-                ()-> {Calculator.calculate(a, secondOperand, operator);});
+                () -> {
+                    Calculator.calculate(a, secondOperand, operator);
+                });
     }
 
     @Test
@@ -71,9 +73,11 @@ class CalculatorTest {
     void testCalculateWrongOperator() {
         int a = 2;
         int secondOperand = 0;
-        char operator= '=';
+        char operator = '=';
 
         assertThrows(RuntimeException.class,
-                ()-> {Calculator.calculate(a, secondOperand, operator);});
+                () -> {
+                    Calculator.calculate(a, secondOperand, operator);
+                });
     }
 }
